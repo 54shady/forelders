@@ -10,8 +10,12 @@ build/tools/make-standalone-toolchain.sh --platform=android-4 --install-dir=/hom
 tar jxvf busybox-1.22.1.tar.bz2
 cd busybox-1.22.1
 
-修改android2_defconfig里交叉编译工具和sysroot参考dot_config文件
+修改android2_defconfig里交叉编译工具和sysroot
 make android2_defconfig 使用这个来生成.config文件
+
+或者使用android_51_busybox1221_dot_config
+cp android_51_busybox1221_dot_config .config
+
 make
 
 adb push busybox /system/bin/
