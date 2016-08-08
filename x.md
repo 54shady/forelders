@@ -105,4 +105,11 @@ android$ iperf -s
 上行测试:
 android$ iperf -c 192.168.0.102 -i 1 -t 60
 PC$ iperf -s
+
+6 mmc_utils 使用
+源码在external/mmc-utils/
+
+mmc_utils status get /dev/block/mmcblk0
+mmc_utils writeprotect get /dev/block/mmcblk0
+mmc_utils extcsd read /dev/block/mmcblk0
 ```
