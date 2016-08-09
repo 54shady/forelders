@@ -112,4 +112,28 @@ PC$ iperf -s
 mmc_utils status get /dev/block/mmcblk0
 mmc_utils writeprotect get /dev/block/mmcblk0
 mmc_utils extcsd read /dev/block/mmcblk0
+
+7 i2c-tool(作用不是很大)
+参考:
+http://my.oschina.net/luoly/blog/368881
+
+7.1 代码下载
+代码没有按照上面提供的下载,而是在gentoo下载的
+sudo emerge -f sys-apps/i2c-tools
+
+7.2 解压添加makefile
+解压代码到external下
+tar jxvf /usr/portage/distfiles/i2c-tools-3.0.2.tar.bz2 -C external/
+添加Android.mk
+
+7.3 编译
+mmm external/i2c-tools-3.0.2/
+
+7.4 使用
+列举 I2C bus
+i2cdetect -l
+
+列举 I2C bus i2c-0 上面连接的所有设备
+i2cdetect -y 0
+发现I2C设备的位置显示为UU或者表示设备地址的数值,UU表示该设备在 driver 中被使用
 ```
